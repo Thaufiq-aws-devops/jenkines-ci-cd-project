@@ -1,9 +1,9 @@
-pipleine {
+pipeline {
     agent any
-    tolls {
+    tools {
         jdk "JDK17"
         maven "MAVEN3.9"
-
+    }
     environment {
         SNAP_REPO = 'vprofile-snapshot'
 		NEXUS_USER = 'admin'
@@ -20,6 +20,6 @@ pipleine {
             steps {
                 sh 'mvn -s settings.xml -DskipTests install'
             }
-    }
+        }
     }
 }
